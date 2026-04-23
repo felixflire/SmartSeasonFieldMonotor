@@ -1,0 +1,223 @@
+/* index.css - Smart Season Field Monitoring System */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 35%, #2f855a 70%, #22543d 100%);
+  min-height: 100vh;
+  color: #1f2937;
+  overflow-x: hidden;
+  padding: 2rem 1rem 4rem;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(72, 187, 120, 0.12) 0%, transparent 55%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+#table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 5.5rem auto 2rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+#table thead tr {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 50%, #2f855a 100%);
+}
+
+#table th,
+#table td {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+#table th {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#table th:last-child {
+  border-right: none;
+}
+
+#table tbody tr {
+  border-bottom: 1px solid rgba(198, 246, 213, 0.8);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+#table tbody tr:nth-child(even) {
+  background: #f3fbf6;
+}
+
+#table tbody tr:hover {
+  background: #eaf9ef;
+}
+
+#table td {
+  color: #2f5d3f;
+  font-size: 0.98rem;
+  border-right: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+#table td:last-child {
+  border-right: none;
+}
+
+#table tbody tr:last-child {
+  border-bottom: none;
+}
+
+#table button,
+#table .edit-btn,
+#table .delete-btn,
+#table .actions button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+#table button:hover,
+#table .edit-btn:hover,
+#table .delete-btn:hover,
+#table .actions button:hover {
+  transform: translateY(-1px);
+}
+
+#table .edit-btn {
+  background: #10b981;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(16, 185, 129, 0.22);
+}
+
+#table .delete-btn {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(239, 68, 68, 0.22);
+}
+
+#table .actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.botomBody {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 140px;
+  padding: 1rem;
+}
+
+body > div:not(.botomBody):not(#table) {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body::after {
+  content: "Smart Season Field Monitoring System";
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 2.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #2d5a3a;
+  font-size: 1.35rem;
+  font-weight: 800;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #table {
+    margin-top: 4.5rem;
+  }
+
+  #table th,
+  #table td {
+    padding: 1rem 0.8rem;
+    font-size: 0.92rem;
+  }
+
+  body::after {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.4rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem 0.5rem 3rem;
+  }
+
+  #table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-radius: 18px;
+  }
+
+  #table thead,
+  #table tbody,
+  #table tr {
+    width: 100%;
+  }
+
+  #table th,
+  #table td {
+    padding: 0.9rem 0.75rem;
+  }
+
+  .botomBody {
+    padding: 0.5rem;
+  }
+
+  body::after {
+    white-space: normal;
+    max-width: 95%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    transition: none !important;
+    animation: none !important;
+  }
+}

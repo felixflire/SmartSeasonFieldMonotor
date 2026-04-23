@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/frontend/src/admin.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Welcome Admin</h1>
+      <div class="navbar">
+        <a href="#fields">Fields</a>
+        <a href="#agents">Agents</a>
+        <a href="#registered_agents">Registered Agents</a>
+      </div>
+    </div>
+
+    <div class="main_body">
+
+      <!-- ================= FIELDS SECTION ================= -->
+      <section class="fields_page p" id="fields">
+        <h1>FIELDS</h1>
+
+        <div class="input_field_name input">
+          <form>
+            <input type="text" id="field_id" name="field_id" placeholder="enter field number" />
+            <input type="text" id="field_name" name="field_name" placeholder="enter field name" />
+            <input type="text" id="crop_type" name="crop_type" placeholder="enter crop type" />
+            <input type="text" id="field_stage" name="field_stage" placeholder="enter field stage" />
+            <input type="text" id="field_status" name="field_status" placeholder="enter field status" />
+            <input type="text" id="planting_date" name="planting_date" placeholder="yyyy-mm-dd" />
+            <div class="buttons">
+              <button type="button" id="add_field_btn">Add</button>
+            </div>
+          </form>
+        </div>
+
+        <table id="field_table" class="table">
+          <thead>
+            <tr>
+              <th>Field ID</th>
+              <th>Field Name</th>
+              <th>Crop Type</th>
+              <th>Field Stage</th>
+              <th>Field Status</th>
+              <th>Planting Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- ================= AGENTS SECTION ================= -->
+      <section class="agents_page p" id="agents">
+        <h1>AGENTS</h1>
+
+        <div class="input_agent_name input">
+          <form>
+            <input type="text" id="assigned_field" name="assigned_field" placeholder="enter assigned field" />
+            <input type="text" id="field_agent_name" name="field_agent_name" placeholder="enter field agent name" />
+            <input type="text" id="email" name="email" placeholder="enter email" />
+            <input type="text" id="field_report" name="field_report" placeholder="enter field report" />
+            <div class="buttons">
+              <button type="button" id="add_field_agent_btn">Add</button>
+            </div>
+          </form>
+        </div>
+
+        <table id="agents_table" class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Assigned Field</th>
+              <th>Field Agent Name</th>
+              <th>Email</th>
+              <th>Observations</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+<!-- ================= REGISTERED AGENTS SECTION ================= -->
+<section class="registered_agents_page p" id="registered_agents">
+  <h1>REGISTERED AGENTS</h1>
+
+  <div class="input_agent_name input">
+    <form>
+  <input type="text" id="agent_number" name="agent_number" placeholder="enter agent number" />
+  <input type="text" id="agent_name" name="agent_name" placeholder="enter agent name" />
+  <input type="text" id="reg_email" name="email" placeholder="enter email" /> 
+  <input type="password" id="password" name="password" placeholder="enter password" />
+  <div class="buttons">
+    <button type="button" id="add_registered_field_agent_btn">Add</button>
+  </div>
+</form>
+  </div>
+
+  <table id="registered_agents_table" class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Agent Number</th>
+        <th>Agent Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+    </div>
+
+    <script src="/frontend/src/admin.js"></script>
+  </body>
+</html>

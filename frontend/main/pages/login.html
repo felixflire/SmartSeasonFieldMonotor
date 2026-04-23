@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="/frontend/src/login.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Login</h1>
+    </div>
+    <div class="login-container">
+        <form  id="login-form" action="/login" method="post"> 
+            <label for="agent_number">User ID:</label>
+            <input type="text" id="agent_number" name="agent_number" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+
+<script src="/frontend/src/login.js"></script>
+</body>
+</html>

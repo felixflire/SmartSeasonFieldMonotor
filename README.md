@@ -127,8 +127,8 @@ npm install
 Log into MySQL and create the database and tables:
 
 ```sql
-CREATE DATABASE smart_farm;
-USE smart_farm;
+CREATE DATABASE smart_season_field_db;
+USE smart_season_field_db;
 
 CREATE TABLE fields (
   field_id INT PRIMARY KEY,
@@ -163,7 +163,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',         // your MySQL username
   password: '',         // your MySQL password
-  database: 'smart_farm'
+  database: 'smart_season_field_db'
 });
 ```
 

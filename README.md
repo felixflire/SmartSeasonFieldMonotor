@@ -70,7 +70,7 @@ Smart-season-field-monitoring-system/
 │   │   ├── field.js               # Field business logic & queries
 │   │   └── field-agents.js        # Agent business logic & queries
 │   │
-│   └── server.js                  # Express app entry point
+│   └── app.js                  # Express app entry point
 │
 ├── frontend/
 │   ├── main/
@@ -132,27 +132,27 @@ USE smart_season_field_db;
 
 CREATE TABLE fields (
   field_id INT PRIMARY KEY,
-  field_name VARCHAR(100),
-  crop_type VARCHAR(100),
-  field_stage VARCHAR(100),
-  field_status VARCHAR(100),
+  field_name VARCHAR(20),
+  crop_type VARCHAR(20),
+  field_stage VARCHAR(20),
+  field_status VARCHAR(50),
   planting_date DATE
 );
 
 CREATE TABLE field_agent (
   id INT AUTO_INCREMENT PRIMARY KEY,
   assigned_field INT,
-  field_agent_name VARCHAR(100),
-  email VARCHAR(100),
+  field_agent_name VARCHAR(20),
+  email VARCHAR(20),
   field_report TEXT
 );
 
 CREATE TABLE registered_agents (
   id INT AUTO_INCREMENT PRIMARY KEY,
   agent_number INT,
-  agent_name VARCHAR(100),
-  email VARCHAR(100),
-  password VARCHAR(100)
+  agent_name VARCHAR(20),
+  email VARCHAR(20),
+  password VARCHAR(20)
 );
 ```
 
@@ -257,7 +257,7 @@ The frontend dev server runs on `http://localhost:5500`.
 - Passwords are stored as plain text (not hashed)
 - Page reloads on every add/delete instead of dynamic DOM updates
 - Limited error handling on the backend
-- Duplicate HTML input IDs across forms can cause wrong values being submitted — ensure each form uses unique IDs (e.g. `reg_email`, `reg_password` for the registered agents form)
+- Duplicate HTML input IDs across forms can cause wrong values being submitted — ensure each form uses unique IDs (e.g. `reg_email`, `password` for the registered agents form)
 
 ---
 

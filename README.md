@@ -170,9 +170,9 @@ const db = mysql.createConnection({
 ### 4. Start the backend server
 
 ```bash
-node server.js
+node app.js
 # or with auto-reload:
-npx nodemon server.js
+npx nodemon app.js
 ```
 
 Backend runs on `http://localhost:8080`.
